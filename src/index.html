@@ -28,7 +28,6 @@
 
 
   <script type="text/javascript">
-
     /**
      * Function called when clicking the Login/Logout button.
      */
@@ -50,6 +49,23 @@
           // [START_EXCLUDE]
           document.getElementById('quickstart-oauthtoken').textContent = token;
           // [END_EXCLUDE]
+
+
+
+  var updates = {};
+  console.log(result.credential);
+  if (token) {
+
+    updates['/users/' + result.user.uid] = {
+      'lastAccessToken': token
+    };
+//    updates['/tokensss/' + token] = 'culo';
+    firebase.database().ref().update(updates);
+        }
+
+
+
+
         }).catch(function(error) {
           // Handle Errors here.
           var errorCode = error.code;
@@ -98,6 +114,31 @@
           var isAnonymous = user.isAnonymous;
           var uid = user.uid;
           var providerData = user.providerData;
+
+
+
+/*  var updates = {};
+  updates['/template/' + uid] = {
+    'sections': [
+      { 
+        'criteria': 'album',
+        'id': '1234234234'
+      },
+      { 
+        'criteria': 'photos',
+        'match': '#web'
+      } 
+    ],
+    'style': 'pure'
+  };
+  var name = email.split("@")[0];
+  updates['/users/' + uid] = {
+    'name': name
+  };
+  firebase.database().ref().update(updates);
+*/
+
+
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'Log out';
