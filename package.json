@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint 'src/js/**'",
-    "copy:cs": "cp src/*.js public/js/",
+    "copy:js": "mkdir -p public/js/ && cp src/js/*.js public/js/",
     "scss": "node-sass --output-style compressed -o public/css src/scss",
     "autoprefixer": "postcss -u autoprefixer -r public/css/*",
-    "clean": "rm -rf public",
+    "clean": "rm -rf public && mkdir public",
     "build:html": "cp src/index.html public/",
     "build:css": "npm-run-all scss autoprefixer",
     "build:js": "npm-run-all lint copy:js",
