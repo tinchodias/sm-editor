@@ -1,0 +1,38 @@
+{
+  "name": "sm-editor",
+  "version": "1.0.0",
+  "description": "sm editor",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint 'src/js/**'",
+    "copy:cs": "cp src/*.js public/js/",
+    "scss": "node-sass --output-style compressed -o public/css src/scss",
+    "autoprefixer": "postcss -u autoprefixer -r public/css/*",
+    "clean": "rm -rf public",
+    "build:html": "cp src/index.html public/",
+    "build:css": "npm-run-all scss autoprefixer",
+    "build:js": "npm-run-all lint copy:js",
+    "build:all": "npm-run-all clean --parallel build:html build:css build:js",
+    "deploy": "npm run build:all && firebase deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinchodias/sm-editor.git"
+  },
+  "author": "tinchodias@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tinchodias/sm-editor/issues"
+  },
+  "homepage": "https://github.com/tinchodias/sm-editor#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.5.4",
+    "eslint": "^3.12.2",
+    "eslint-config-google": "^0.7.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "node-sass": "^4.1.1",
+    "postcss-cli": "^2.6.0"
+  }
+}
