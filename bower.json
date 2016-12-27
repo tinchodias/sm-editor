@@ -1,0 +1,24 @@
+{
+  "name": "sm-public",
+  "homepage": "",
+  "authors": [
+    "tinchodias <tinchodias@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-masonry": "^0.16.0",
+    "lightbox2": "^2.9.0",
+    "angular-ui-router": "^0.3.2",
+    "angular-lazy-img": "^1.2.2"
+  }
+}

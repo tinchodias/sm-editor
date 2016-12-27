@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Mirror Public</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+  <!-- Needed for ui-router's html5Mode -->
+  <base href="/">
+
+
+  <!-- ANGULAR MASONRY -->
+  <script src="lib/jquery/dist/jquery.js"></script>
+  <script src="lib/jquery-bridget/jquery-bridget.js"></script>
+  <script src="lib/ev-emitter/ev-emitter.js"></script>
+  <script src="lib/desandro-matches-selector/matches-selector.js"></script>
+  <script src="lib/fizzy-ui-utils/utils.js"></script>
+  <script src="lib/get-size/get-size.js"></script>
+  <script src="lib/outlayer/item.js"></script>
+  <script src="lib/outlayer/outlayer.js"></script>
+  <script src="lib/masonry/masonry.js"></script>
+  <script src="lib/imagesloaded/imagesloaded.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="lib/angular-masonry/angular-masonry.js"></script>
+
+  <!-- LAZY LOADING IMAGES -->
+  <script src="lib/angular-lazy-img/release/angular-lazy-img.min.js"></script>
+
+  <!-- LIGHTBOX -->
+  <link href="lib/lightbox2/dist/css/lightbox.min.css" rel="stylesheet">
+  <script src="lib/lightbox2/dist/js/lightbox.min.js"></script>
+
+  <!-- FONT AWESOME -->
+  <script src="//use.fontawesome.com/9ccc9f2c30.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+  <img ng-show="stateLoading" ng-src="img/loading-fb.gif">
+  <div ng-hide="stateLoading" ui-view></div>
+
+  <script src="js/app.js"></script>
+  <script src="js/photos.js"></script>
+  <script>
+    lightbox.option({
+      'resizeDuration': 200,
+      'disableScrolling': true
+    })
+  </script>
+</body>
+</html>
